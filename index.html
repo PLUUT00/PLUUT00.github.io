@@ -1,11 +1,195 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>PLUUT00</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PLUTO — Developer</title>
+  <meta name="description" content="PLUTO — Go + Python developer learning JavaScript." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <h1>It works</h1>
-  <p>GitHub Pages is live.</p>
+  <div class="bg"></div>
+
+  <header class="container header">
+    <a class="brand" href="#">
+      <span class="dot"></span>
+      <span>PLUTO</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#now">Now</a>
+      <a href="#contact">Contact</a>
+      <button class="btn ghost" id="themeBtn" type="button" aria-label="Toggle theme">Theme</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Intro">
+      <div class="hero-card">
+        <p class="kicker">Software Developer</p>
+
+        <h1 class="title">
+          I’m <span class="grad">PLUTO</span>.
+          <br />
+          I build fast systems and clean tooling.
+        </h1>
+
+        <p class="subtitle">
+          I know <strong>Golang</strong> really well, I’m strong in <strong>Python</strong>,
+          and I’m currently learning <strong>JavaScript</strong> to ship modern web experiences.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="#contact">Contact</a>
+          <a class="btn" href="#about">Read more</a>
+        </div>
+
+        <div class="badges" aria-label="Tech badges">
+          <span class="badge">Go</span>
+          <span class="badge">Python</span>
+          <span class="badge">JavaScript (learning)</span>
+          <span class="badge" id="statusBadge" title="Live status">Status: building</span>
+        </div>
+      </div>
+
+      <aside class="side-card" aria-label="Highlights">
+        <div class="side-top">
+          <p class="side-title">Focus</p>
+          <p class="side-text" id="rotatingLine">Systems • APIs • Automation</p>
+        </div>
+
+        <div class="side-grid">
+          <div class="mini">
+            <p class="mini-k">Strength</p>
+            <p class="mini-v">Golang</p>
+          </div>
+          <div class="mini">
+            <p class="mini-k">Also</p>
+            <p class="mini-v">Python</p>
+          </div>
+          <div class="mini">
+            <p class="mini-k">Now learning</p>
+            <p class="mini-v">JavaScript</p>
+          </div>
+          <div class="mini">
+            <p class="mini-k">Style</p>
+            <p class="mini-v">Minimal</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>Short, direct, and technical.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Who I am</h3>
+          <p>
+            I’m PLUTO. I like building reliable software that’s easy to reason about:
+            backend services, automation, and developer tooling.
+          </p>
+          <p>
+            My default is: clear interfaces, predictable behavior, strong observability,
+            and performance that’s earned—not guessed.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>What I’m optimizing for</h3>
+          <ul class="list">
+            <li><span>Correctness</span><small>tests, types, invariants</small></li>
+            <li><span>Speed</span><small>profiling, bottleneck removal</small></li>
+            <li><span>Simplicity</span><small>no accidental complexity</small></li>
+            <li><span>Shipping</span><small>small steps, continuous delivery</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>Core languages and what I use them for.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Golang</h3>
+          <p>APIs, services, concurrency, CLIs, performance-sensitive work.</p>
+          <div class="meter"><span style="width: 92%"></span></div>
+        </div>
+        <div class="card">
+          <h3>Python</h3>
+          <p>Automation, scripting, data tasks, fast iteration, glue code.</p>
+          <div class="meter"><span style="width: 84%"></span></div>
+        </div>
+        <div class="card">
+          <h3>JavaScript</h3>
+          <p>Learning: modern frontend basics and shipping real UIs.</p>
+          <div class="meter"><span style="width: 55%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="now" class="section">
+      <div class="section-head">
+        <h2>Now</h2>
+        <p>Current direction.</p>
+      </div>
+
+      <div class="card">
+        <p>
+          Right now I’m deepening my JavaScript skills while keeping Go and Python as my
+          main production tools. I’m interested in building web-facing products without
+          sacrificing backend quality.
+        </p>
+        <div class="pillrow">
+          <span class="pill">Go services</span>
+          <span class="pill">Python automation</span>
+          <span class="pill">JS fundamentals</span>
+          <span class="pill">Shipping</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Add your links here.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Links</h3>
+          <div class="links">
+            <a class="link" href="https://github.com/PLUUT00" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="link" href="#" onclick="return false;">Email (add me)</a>
+            <a class="link" href="#" onclick="return false;">LinkedIn (add me)</a>
+          </div>
+          <p class="muted">Edit these in <code>index.html</code>.</p>
+        </div>
+
+        <div class="card">
+          <h3>One-liner</h3>
+          <p class="mono" id="oneLiner">
+            PLUTO — Go-first developer. Python strong. JavaScript in progress.
+          </p>
+          <button class="btn" id="copyBtn" type="button">Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> PLUTO. Built on GitHub Pages.</p>
+    </footer>
+  </main>
 </body>
 </html>
