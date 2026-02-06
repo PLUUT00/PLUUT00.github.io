@@ -1,386 +1,347 @@
-:root{
-  /* DARK GREEN */
-  --bg: #06110b;                    /* near-black green */
-  --panel: rgba(210,255,230,0.06);  /* green-tinted glass */
-  --panel2: rgba(210,255,230,0.09);
-  --text: rgba(236,255,244,0.92);
-  --muted: rgba(236,255,244,0.68);
-  --line: rgba(210,255,230,0.14);
-  --shadow: 0 18px 60px rgba(0,0,0,0.50);
+:root {
+  /* DARK GREEN - SIMPLIFIED */
+  --bg: #0d110f;
+  --panel: #161b18;
+  --panel2: #202622;
+  --text: #e2e8e4;
+  --muted: #9aa59f;
+  --line: #2a332d;
+  --shadow: none;
 
-  /* accents drive ALL gradients */
-  --accent1: #16a34a;  /* green */
-  --accent2: #34d399;  /* mint */
+  /* accents - solid colors */
+  --accent1: #16a34a;
+  /* green */
+  --accent2: #34d399;
+  /* mint */
 
-  --radius: 18px;
-  --radius2: 26px;
-  --max: 1080px;
+  --radius: 6px;
+  --radius2: 8px;
+  --max: 900px;
 }
 
 
-[data-theme="light"]{
-  /* LIGHT GREEN */
-  --bg: #f3fbf6;
-  --panel: rgba(6,17,11,0.05);
-  --panel2: rgba(6,17,11,0.07);
-  --text: rgba(6,17,11,0.92);
-  --muted: rgba(6,17,11,0.62);
-  --line: rgba(6,17,11,0.12);
-  --shadow: 0 18px 60px rgba(0,0,0,0.12);
+[data-theme="light"] {
+  /* LIGHT GREEN - SIMPLIFIED */
+  --bg: #ffffff;
+  --panel: #f4f6f5;
+  --panel2: #e9ecea;
+  --text: #1a1d1b;
+  --muted: #525a56;
+  --line: #dadddb;
+  --shadow: none;
 
   --accent1: #15803d;
   --accent2: #10b981;
 }
 
-*{ box-sizing: border-box; }
-html,body{ height: 100%; }
-body{
-  margin:0;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.55;
-  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-.bg{
-  position: fixed;
-  inset: -40vh -20vw;
-  background:
-    radial-gradient(800px 450px at 20% 20%, color-mix(in srgb, var(--accent2) 16%, transparent), transparent 62%),
-    radial-gradient(900px 520px at 75% 25%, color-mix(in srgb, var(--accent1) 16%, transparent), transparent 62%),
-    radial-gradient(900px 520px at 50% 85%, rgba(210,255,230,0.06), transparent 68%);
-  filter: blur(26px);
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.container{
+.container {
   width: min(var(--max), calc(100% - 40px));
   margin: 0 auto;
 }
 
-.header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(12px);
-  background: linear-gradient(to bottom, color-mix(in srgb, var(--bg) 85%, transparent), transparent);
-  z-index: 10;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  background: var(--bg);
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
   color: var(--text);
   font-weight: 700;
-  letter-spacing: 0.2px;
-}
-.dot{
-  width: 10px; height: 10px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent2) 20%, transparent);
+  letter-spacing: -0.02em;
+  font-size: 18px;
 }
 
-.nav{
-  display:flex;
-  gap:14px;
-  align-items:center;
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent1);
 }
-.nav a{
+
+.nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.nav a {
   color: var(--muted);
-  text-decoration:none;
-  font-size: 14px;
-  padding: 8px 10px;
-  border-radius: 12px;
+  text-decoration: none;
+  font-size: 15px;
 }
-.nav a:hover{
+
+.nav a:hover {
   color: var(--text);
-  background: var(--panel);
+  text-decoration: underline;
 }
 
-.hero{
-  display:grid;
-  grid-template-columns: 1.35fr 0.85fr;
-  gap: 18px;
-  padding: 22px 0 10px;
+.hero {
+  margin: 40px 0;
 }
 
-.hero-card, .side-card, .card{
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, var(--panel), transparent);
-  border-radius: var(--radius2);
-  box-shadow: var(--shadow);
-}
-
-.hero-card{
-  padding: 28px;
-}
-
-.kicker{
-  margin:0 0 12px;
-  color: var(--muted);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.title{
-  margin:0;
-  font-size: clamp(28px, 4vw, 46px);
-  line-height: 1.12;
-}
-
-.grad{
+.kicker {
+  margin: 0 0 16px;
   color: var(--accent2);
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
-.subtitle{
-  margin: 14px 0 0;
+.title {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.grad {
+  color: var(--accent1);
+}
+
+.subtitle {
+  margin: 20px 0 0;
   color: var(--muted);
-  max-width: 58ch;
+  max-width: 60ch;
+  font-size: 18px;
 }
 
-.cta{
-  display:flex;
-  gap: 10px;
-  margin-top: 18px;
-  flex-wrap: wrap;
+.cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
 }
 
-.btn{
-  appearance:none;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  color: var(--text);
-  padding: 10px 14px;
-  border-radius: 14px;
-  font-weight: 650;
-  font-size: 14px;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap: 10px;
-}
-.btn:hover{ background: var(--panel2); }
-.btn.primary{
-  border-color: color-mix(in srgb, var(--accent2) 35%, var(--line));
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent1) 25%, var(--panel)), color-mix(in srgb, var(--accent2) 18%, var(--panel)));
-}
-.btn.ghost{
+.btn {
+  appearance: none;
   background: transparent;
+  color: var(--text);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
 }
 
-.badges{
-  margin-top: 18px;
-  display:flex;
+.btn:hover {
+  background: var(--panel2);
+}
+
+.btn.primary {
+  background: var(--accent1);
+  border-color: var(--accent1);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--accent2);
+  border-color: var(--accent2);
+  color: #000;
+}
+
+.btn.ghost {
+  border: none;
+  padding: 0;
+}
+
+.btn.ghost:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+
+.badges {
+  margin-top: 24px;
+  display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
-.badge{
-  font-size: 12px;
-  color: var(--muted);
-  border: 1px solid var(--line);
-  background: rgba(0,0,0,0.12);
-  padding: 6px 10px;
-  border-radius: 999px;
-}
-[data-theme="light"] .badge{ background: rgba(255,255,255,0.7); }
 
-.side-card{
-  padding: 18px;
-  display:flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.side-title{
-  margin:0;
+.badge {
+  font-size: 13px;
   color: var(--muted);
+  background: var(--panel);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.section {
+  padding: 60px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-head {
+  margin-bottom: 30px;
+}
+
+.section-head h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
   font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
-.side-text{
-  margin: 8px 0 0;
-  font-weight: 750;
-  font-size: 18px;
-}
-.side-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.mini{
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 12px;
-  background: linear-gradient(180deg, var(--panel2), transparent);
-}
-.mini-k{
-  margin:0;
+
+.section-head p {
+  margin: 0;
   color: var(--muted);
-  font-size: 12px;
-}
-.mini-v{
-  margin: 6px 0 0;
-  font-weight: 780;
 }
 
-.section{
-  padding: 28px 0 6px;
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
 
-.section-head{
-  display:flex;
-  align-items: baseline;
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
   justify-content: space-between;
-  gap: 12px;
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+.list span {
+  font-weight: 500;
+}
+
+.list small {
+  color: var(--muted);
+}
+
+.meter {
+  height: 6px;
+  background: var(--panel);
+  border-radius: 99px;
+  margin-top: 8px;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  background: var(--accent1);
+  border-radius: 99px;
+}
+
+.pillrow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: 13px;
+  padding: 4px 10px;
+  background: var(--panel);
+  border-radius: 99px;
+  color: var(--text);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--accent2);
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.mono {
+  font-family: monospace;
+  background: var(--panel);
+  padding: 12px;
+  border-radius: 4px;
+  display: block;
   margin-bottom: 12px;
 }
-.section-head h2{
-  margin:0;
-  font-size: 18px;
-  letter-spacing: 0.2px;
-}
-.section-head p{
-  margin:0;
+
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
 }
 
-.grid2{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-.grid3{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 14px;
+/* Hide side card for simpler layout? Or keep it simple. Let's keep it but simplified. */
+.side-card {
+  display: none;
+  /* Suggestion: remove side card for "straight to the point" */
 }
 
-.card{
-  padding: 18px;
-  border-radius: var(--radius2);
-}
-.card h3{
-  margin:0 0 8px;
-  font-size: 16px;
-}
-.card p{
-  margin:0 0 10px;
-  color: var(--muted);
-}
-.card p:last-child{ margin-bottom: 0; }
-
-.list{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display:flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.list li{
-  display:flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 10px 12px;
-  background: linear-gradient(180deg, var(--panel2), transparent);
-}
-.list span{
-  font-weight: 700;
-}
-.list small{
-  color: var(--muted);
+/* Adjust hero grid since we hid side card */
+.hero {
+  display: block;
 }
 
-.meter{
-  height: 10px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--panel2) 55%, transparent);
-  overflow:hidden;
-  border: 1px solid var(--line);
-}
-.meter span{
-  display:block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent1), var(--accent2));
-  border-radius: 999px;
-}
+@media (max-width: 600px) {
 
-.pillrow{
-  display:flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-.pill{
-  font-size: 12px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  color: var(--muted);
-  background: linear-gradient(180deg, var(--panel2), transparent);
-}
+  .grid2,
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
 
-.links{
-  display:flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.link{
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 10px 12px;
-  text-decoration:none;
-  color: var(--text);
-  background: linear-gradient(180deg, var(--panel2), transparent);
-}
-.link:hover{ background: var(--panel); }
-
-.muted{
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.mono{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  color: var(--text);
-  background: color-mix(in srgb, var(--panel2) 55%, transparent);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 12px;
-}
-
-.footer{
-  padding: 26px 0 44px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-code{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-}
-
-@media (max-width: 920px){
-  .hero{ grid-template-columns: 1fr; }
-  .grid3{ grid-template-columns: 1fr; }
-  .grid2{ grid-template-columns: 1fr; }
-  .nav a{ display:none; }
+  .title {
+    font-size: 36px;
+  }
 }

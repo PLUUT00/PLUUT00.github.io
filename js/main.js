@@ -20,35 +20,7 @@
   }
   if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
 
-  // Rotating focus line
-  const rotating = $("#rotatingLine");
-  const lines = [
-    "Systems • APIs • Automation",
-    "Performance • Reliability • DX",
-    "Tooling • CLIs • Deployments",
-  ];
-  let i = 0;
-  if (rotating) {
-    setInterval(() => {
-      i = (i + 1) % lines.length;
-      rotating.style.opacity = "0";
-      setTimeout(() => {
-        rotating.textContent = lines[i];
-        rotating.style.opacity = "1";
-      }, 180);
-    }, 2400);
-  }
 
-  // Status badge (cosmetic)
-  const status = $("#statusBadge");
-  if (status) {
-    const states = ["building", "shipping", "iterating"];
-    let s = 0;
-    setInterval(() => {
-      s = (s + 1) % states.length;
-      status.textContent = `Status: ${states[s]}`;
-    }, 3200);
-  }
 
   // Copy one-liner
   const copyBtn = $("#copyBtn");
