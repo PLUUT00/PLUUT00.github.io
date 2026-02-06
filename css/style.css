@@ -376,4 +376,6 @@ code{
 @media (max-width: 920px){
   .hero{ grid-template-columns: 1fr; }
   .grid3{ grid-template-columns: 1fr; }
-  .grid2{ grid-templa
+  .grid2{ grid-template-columns: 1fr; }
+  .nav a{ display:none; }
+}
