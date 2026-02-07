@@ -1,5 +1,5 @@
 :root {
-  /* DARK GREEN - SIMPLIFIED */
+
   --bg: #0d110f;
   --panel: #161b18;
   --panel2: #202622;
@@ -8,11 +8,11 @@
   --line: #2a332d;
   --shadow: none;
 
-  /* accents - solid colors */
+
   --accent1: #16a34a;
-  /* green */
+
   --accent2: #34d399;
-  /* mint */
+
 
   --radius: 6px;
   --radius2: 8px;
@@ -21,7 +21,6 @@
 
 
 [data-theme="light"] {
-  /* LIGHT GREEN - SIMPLIFIED */
   --bg: #ffffff;
   --panel: #f4f6f5;
   --panel2: #e9ecea;
@@ -323,13 +322,12 @@ body {
   font-size: 14px;
 }
 
-/* Hide side card for simpler layout? Or keep it simple. Let's keep it but simplified. */
+
 .side-card {
   display: none;
-  /* Suggestion: remove side card for "straight to the point" */
+
 }
 
-/* Adjust hero grid since we hid side card */
 .hero {
   display: block;
 }
